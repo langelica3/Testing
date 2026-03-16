@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Audit - Testing Automator</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f7f6; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 400px; }
+        h2 { color: #2c3e50; margin-bottom: 1.5rem; text-align: center; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+        input[type="file"] { width: 100%; border: 1px solid #ccc; padding: 5px; border-radius: 4px; }
+        button { width: 100%; background-color: #2980b9; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+        button:hover { background-color: #3498db; }
+        .note { font-size: 0.8rem; color: #666; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Testing Automator</h2>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            <label for="test_sheet">1. Upload Test Sheet (Excel)</label>
+            <input type="file" name="test_sheet" id="test_sheet" accept=".xlsx, .csv" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tickets">2. Upload Evidence (1-60 Tickets)</label>
+            <input type="file" name="tickets" id="tickets" multiple required>
+        </div>
+
+        <button type="submit">Run Automated Testing</button>
+    </form>
+
+    <div class="note">
+        <p><strong>Note:</strong> Supported files include PDF, JPG, and PNG. Ensure the Ticket ID
