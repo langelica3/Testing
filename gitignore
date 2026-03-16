@@ -1,0 +1,6 @@
+*.xlsx
+*.csv
+*.pdf
+*.jpg
+*.png
+__pycache__/
